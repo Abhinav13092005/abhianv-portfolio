@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Abhinav Kumar | Java • Python • Web Developer</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior:smooth
+}
+
+:root{
+    --bg:#07101f;
+    --card:#0f1b2d;
+    --text:#f8fafc;
+    --muted:#aab6c8;
+    --blue:#38bdf8;
+    --purple:#818cf8;
+    --line:#243247
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:10;
+    background:#07101feF;
+    border-bottom:1px solid var(--line)
+}
+
+nav{
+    max-width:1150px;
+    margin:auto;
+    padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800
+}
+
+.logo span{
+    color:var(--blue)
+}
+
+nav ul{
+    display:flex;
+    gap:24px;
+    list-style:none
+}
+
+nav a{
+    color:#dbeafe;
+    text-decoration:none;
+    font-weight:600
+}
+
+nav a:hover{
+    color:var(--blue)
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer
+}
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:100px 24px
+}
+
+#home{
+    max-width:none;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding-top:140px;
+    background:
+    radial-gradient(circle at 20% 20%,#12304a,transparent 35%),
+    radial-gradient(circle at 80% 30%,#24204d,transparent 30%)
+}
+
+.hero{
+    max-width:900px
+}
+
+.tag{
+    display:inline-block;
+    border:1px solid #28536b;
+    border-radius:99px;
+    padding:7px 14px;
+    color:#7dd3fc;
+    margin-bottom:20px;
+    font-size:13px;
+    font-weight:700
+}
+
+h1{
+    font-size:clamp(44px,8vw,80px);
+    line-height:1.05;
+    letter-spacing:-3px;
+    margin-bottom:18px
+}
+
+h1 span{
+    color:var(--blue)
+}
+
+.hero h2{
+    font-size:clamp(20px,3vw,30px);
+    margin-bottom:18px
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:17px;
+    max-width:760px;
+    margin:auto
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    font-weight:700;
+    padding:12px 20px;
+    border-radius:10px;
+    margin:6px
+}
+
+.primary{
+    background:linear-gradient(90deg,var(--blue),var(--purple));
+    color:#06101c
+}
+
+.ghost{
+    border:1px solid var(--line);
+    color:white
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:35px
+}
+
+.stat{
+    background:#ffffff08;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:15px 22px
+}
+
+.stat strong{
+    display:block;
+    font-size:22px
+}
+
+.stat small{
+    color:var(--muted)
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:38px
+}
+
+.title span{
+    color:var(--blue)
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:30px
+}
+
+.about p,
+.project p,
+.info p,
+.info li,
+.contact p{
+    color:var(--muted)
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px
+}
+
+.skill{
+    text-align:center;
+    padding:22px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    font-weight:700
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px
+}
+
+.project h3{
+    color:#7dd3fc;
+    margin-bottom:12px
+}
+
+.project .tech{
+    font-size:13px;
+    font-weight:700;
+    color:#dbeafe;
+    margin-top:10px
+}
+
+/* Project buttons */
+.project .btn{
+    margin-top:18px
+}
+
+.two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px
+}
+
+.info h3{
+    color:#7dd3fc;
+    margin-bottom:10px
+}
+
+.info ul{
+    list-style:none
+}
+
+.info li{
+    margin:7px 0
+}
+
+.contact{
+    text-align:center
+}
+
+.contact a{
+    color:#7dd3fc;
+    text-decoration:none;
+    font-weight:700
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid var(--line);
+    color:#94a3b8
+}
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+        position:absolute;
+        top:62px;
+        left:0;
+        width:100%;
+        background:#07101f;
+        padding:20px;
+        flex-direction:column;
+        text-align:center
+    }
+
+    nav ul.active{
+        display:flex
+    }
+
+    .menu{
+        display:block
+    }
+
+    .skills{
+        grid-template-columns:repeat(2,1fr)
+    }
+
+    .projects,
+    .two{
+        grid-template-columns:1fr
+    }
+}
+
+@media(max-width:520px){
+
+    .skills{
+        grid-template-columns:1fr
+    }
+
+    .stats{
+        display:grid;
+        grid-template-columns:1fr 1fr
+    }
+
+    section{
+        padding:80px 18px
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<div class="logo">
+    Abhinav<span>.</span>
+</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<ul id="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+
+
+<!-- HOME -->
+<section id="home">
+
+<div class="hero">
+
+<div class="tag">
+    OPEN TO ENTRY-LEVEL SOFTWARE / IT OPPORTUNITIES
+</div>
+
+<h1>
+    Hi, I'm <span>Abhinav Kumar</span>
+</h1>
+
+<h2>
+    Java Developer • Python Developer • Web Developer
+</h2>
+
+<p>
+    Information Technology undergraduate with hands-on experience in Java,
+    web development and database systems, with a strong foundation in data
+    structures, OOP and problem-solving.
+</p>
+
+<div>
+
+<a class="btn primary" href="#projects">
+    Explore My Work
+</a>
+
+<a class="btn ghost" href="resume.pdf" target="_blank">
+    View Resume ↗
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+    <strong>500+</strong>
+    <small>CodeChef Problems</small>
+</div>
+
+<div class="stat">
+    <strong>3</strong>
+    <small>Featured Projects</small>
+</div>
+
+<div class="stat">
+    <strong>2</strong>
+    <small>Certifications</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<h2 class="title">
+    About <span>Me</span>
+</h2>
+
+<div class="card about">
+
+<p>
+    I am an Information Technology undergraduate with hands-on experience
+    in Java, web development and database systems. I have a strong foundation
+    in data structures, object-oriented programming and problem-solving.
+</p>
+
+<br>
+
+<p>
+    I am seeking an entry-level software or IT role where I can contribute
+    technical skills, build practical solutions and grow in a collaborative
+    environment.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+<h2 class="title">
+    Technical <span>Skills</span>
+</h2>
+
+<div class="skills">
+
+<div class="skill">☕ Java</div>
+<div class="skill">🐍 Python</div>
+<div class="skill">🌐 HTML</div>
+<div class="skill">🎨 CSS</div>
+<div class="skill">⚡ JavaScript</div>
+<div class="skill">🗄️ SQL</div>
+<div class="skill">⚛️ React</div>
+<div class="skill">🔧 Git & GitHub</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<h2 class="title">
+    Featured <span>Projects</span>
+</h2>
+
+<div class="projects">
+
+
+<!-- CHATTING APPLICATION -->
+<div class="card project">
+
+<h3>
+    💬 Chatting Application
+</h3>
+
+<p>
+    Real-time peer-to-peer communication system using TCP socket programming
+    and a client-server architecture, with a lightweight console-based interface.
+</p>
+
+<div class="tech">
+    Java • Socket Programming
+</div>
+
+<!-- LIVE BUTTON -->
+<a
+    class="btn primary"
+    href="https://abhinav13092005.github.io/Chatting-Application/"
+    target="_blank"
+>
+    Live ↗
+</a>
+
+<!-- GITHUB BUTTON -->
+<a
+    class="btn ghost"
+    href="https://github.com/Abhinav13092005/Chatting-Application"
+    target="_blank"
+>
+    GitHub ↗
+</a>
+
+</div>
+
+
+<!-- FOOD RETAIL -->
+<div class="card project">
+
+<h3>
+    🍴 Food Retail Management System
+</h3>
+
+<p>
+    Web-based food retail management system for managing food products
+    and retail operations, with CRUD functionality and RESTful APIs.
+</p>
+
+<div class="tech">
+    Java 21 • Spring Boot • Spring Data JPA • MySQL
+</div>
+
+<a
+    class="btn primary"
+    href="https://github.com/Abhinav13092005/food-retail-management-system"
+    target="_blank"
+>
+    GitHub ↗
+</a>
+
+</div>
+
+
+<!-- EXPENSE TRACKER -->
+<div class="card project">
+
+<h3>
+    💰 Expense Tracker
+</h3>
+
+<p>
+    Python-based application for tracking daily expenses with features
+    for adding, updating, deleting and categorizing expense records.
+</p>
+
+<div class="tech">
+    Python • SQLite
+</div>
+
+<a
+    class="btn primary"
+    href="https://github.com/Abhinav13092005"
+    target="_blank"
+>
+    GitHub ↗
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+
+<h2 class="title">
+    Education & <span>Highlights</span>
+</h2>
+
+<div class="two">
+
+
+<div class="card info">
+
+<h3>
+    🎓 Education
+</h3>
+
+<p>
+    <b>Technocrats Institute of Technology, Bhopal</b>
+</p>
+
+<p>
+    B.Tech in Information Technology • 2026
+</p>
+
+<p>
+    CGPA: <b>7.64 / 10</b>
+</p>
+
+</div>
+
+
+<div class="card info">
+
+<h3>
+    🏆 Achievements
+</h3>
+
+<ul>
+
+<li>
+    ✓ Solved 500+ coding problems on CodeChef
+</li>
+
+<li>
+    ✓ CodeChef badges: 1 Gold, 1 Silver
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="card info">
+
+<h3>
+    📜 Certifications
+</h3>
+
+<ul>
+
+<li>
+    ✓ Microsoft Certified: Azure Fundamentals (AZ-900)
+</li>
+
+<li>
+    ✓ ServiceNow System Administration
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="card info">
+
+<h3>
+    💡 Core Concepts
+</h3>
+
+<ul>
+
+<li>
+    ✓ Data Structures & Algorithms
+</li>
+
+<li>
+    ✓ OOP • DBMS • Cloud Fundamentals
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+<h2 class="title">
+    Let's <span>Connect</span>
+</h2>
+
+<div class="card contact">
+
+<p>
+    📧
+    <a href="mailto:abhinavsingh4890@gmail.com">
+        abhinavsingh4890@gmail.com
+    </a>
+</p>
+
+<p>
+    💻
+    <a
+        href="https://github.com/Abhinav13092005"
+        target="_blank"
+    >
+        GitHub — Abhinav13092005
+    </a>
+</p>
+
+<p>
+    🔗
+    <a
+        href="https://www.linkedin.com/in/abhinav1309/"
+        target="_blank"
+    >
+        LinkedIn — abhinav1309
+    </a>
+</p>
+
+<a
+    class="btn primary"
+    href="resume.pdf"
+    target="_blank"
+>
+    Open Resume ↗
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Abhinav Kumar • Java Developer | Python Developer | Web Developer
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+    document.getElementById('nav').classList.toggle('active')
+}
+
+document.querySelectorAll('#nav a').forEach(a =>
+    a.onclick = () =>
+        document.getElementById('nav').classList.remove('active')
+)
+
+</script>
+
+</body>
+</html>
