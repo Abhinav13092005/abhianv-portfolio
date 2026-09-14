@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -220,10 +221,16 @@ h1 span{
     font-weight:700
 }
 
+/* FOUR PROJECTS IN ONE ROW */
 .projects{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px
+    grid-template-columns:repeat(4,1fr);
+    gap:18px
+}
+
+.project{
+    display:flex;
+    flex-direction:column
 }
 
 .project h3{
@@ -278,6 +285,13 @@ footer{
     color:#94a3b8
 }
 
+@media(max-width:1000px){
+
+    .projects{
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+
 @media(max-width:850px){
 
     nav ul{
@@ -304,9 +318,27 @@ footer{
         grid-template-columns:repeat(2,1fr)
     }
 
-    .projects,
     .two{
         grid-template-columns:1fr
+    }
+}
+
+@media(max-width:600px){
+
+    .projects{
+        grid-template-columns:1fr
+    }
+
+    .container{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    section{
+        padding:80px 18px
     }
 }
 
@@ -320,12 +352,9 @@ footer{
         display:grid;
         grid-template-columns:1fr 1fr
     }
-
-    section{
-        padding:80px 18px
-    }
 }
 </style>
+
 </head>
 
 <body>
@@ -350,7 +379,6 @@ footer{
 
 </nav>
 </header>
-
 
 <section id="home">
 
@@ -394,7 +422,7 @@ footer{
 </div>
 
 <div class="stat">
-    <strong>3</strong>
+    <strong>4</strong>
     <small>Featured Projects</small>
 </div>
 
@@ -408,7 +436,6 @@ footer{
 </div>
 
 </section>
-
 
 <section id="about">
 
@@ -436,7 +463,6 @@ footer{
 
 </section>
 
-
 <section id="skills">
 
 <h2 class="title">
@@ -458,7 +484,6 @@ footer{
 
 </section>
 
-
 <section id="projects">
 
 <h2 class="title">
@@ -466,7 +491,6 @@ footer{
 </h2>
 
 <div class="projects">
-
 
 <div class="card project">
 
@@ -484,23 +508,32 @@ footer{
 </div>
 
 <a
-    class="btn primary"
-    href="https://abhinav13092005.github.io/Chatting-Application/"
-    target="_blank"
+class="btn primary"
+href="https://abhinav13092005.github.io/Chatting-Application/"
+target="_blank"
+
 >
-    Live ↗
+
+```
+Live ↗
+```
+
 </a>
 
 <a
-    class="btn ghost"
-    href="https://github.com/Abhinav13092005/Chatting-Application"
-    target="_blank"
+class="btn ghost"
+href="https://github.com/Abhinav13092005/Chatting-Application"
+target="_blank"
+
 >
-    GitHub ↗
+
+```
+GitHub ↗
+```
+
 </a>
 
 </div>
-
 
 <div class="card project">
 
@@ -513,224 +546,4 @@ footer{
     and retail operations, with CRUD functionality and RESTful APIs.
 </p>
 
-<div class="tech">
-    Java 21 • Spring Boot • Spring Data JPA • MySQL
-</div>
-
-<a
-    class="btn primary"
-    href="https://food-retail-management-system.onrender.com"
-    target="_blank"
->
-    Live ↗
-</a>
-
-<a
-    class="btn ghost"
-    href="https://github.com/Abhinav13092005/food-retail-management-system"
-    target="_blank"
->
-    GitHub ↗
-</a>
-
-</div>
-
-
-<div class="card project">
-
-<h3>
-    💰 Expense Tracker
-</h3>
-
-<p>
-    Python-based application for tracking daily expenses with features
-    for adding, updating, deleting and categorizing expense records.
-</p>
-
-<div class="tech">
-    Python • SQLite
-</div>
-
-<a
-    class="btn primary"
-    href="https://github.com/Abhinav13092005"
-    target="_blank"
->
-    GitHub ↗
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="education">
-
-<h2 class="title">
-    Education & <span>Highlights</span>
-</h2>
-
-<div class="two">
-
-
-<div class="card info">
-
-<h3>
-    🎓 Education
-</h3>
-
-<p>
-    <b>Technocrats Institute of Technology, Bhopal</b>
-</p>
-
-<p>
-    B.Tech in Information Technology • 2026
-</p>
-
-<p>
-    CGPA: <b>7.64 / 10</b>
-</p>
-
-</div>
-
-
-<div class="card info">
-
-<h3>
-    🏆 Achievements
-</h3>
-
-<ul>
-
-<li>
-    ✓ Solved 500+ coding problems on CodeChef
-</li>
-
-<li>
-    ✓ CodeChef badges: 1 Gold, 1 Silver
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="card info">
-
-<h3>
-    📜 Certifications
-</h3>
-
-<ul>
-
-<li>
-    ✓ Microsoft Certified: Azure Fundamentals (AZ-900)
-</li>
-
-<li>
-    ✓ ServiceNow System Administration
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="card info">
-
-<h3>
-    💡 Core Concepts
-</h3>
-
-<ul>
-
-<li>
-    ✓ Data Structures & Algorithms
-</li>
-
-<li>
-    ✓ OOP • DBMS • Cloud Fundamentals
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<section id="contact">
-
-<h2 class="title">
-    Let's <span>Connect</span>
-</h2>
-
-<div class="card contact">
-
-<p>
-    📧
-    <a href="mailto:abhinavsingh4890@gmail.com">
-        abhinavsingh4890@gmail.com
-    </a>
-</p>
-
-<p>
-    💻
-    <a
-        href="https://github.com/Abhinav13092005"
-        target="_blank"
-    >
-        GitHub — Abhinav13092005
-    </a>
-</p>
-
-<p>
-    🔗
-    <a
-        href="https://www.linkedin.com/in/abhinav1309/"
-        target="_blank"
-    >
-        LinkedIn — abhinav1309
-    </a>
-</p>
-
-<a
-    class="btn primary"
-    href="abhinav.pdf"
-    target="_blank"
->
-    Open Resume ↗
-</a>
-
-</div>
-
-</section>
-
-
-<footer>
-
-© 2026 Abhinav Kumar • Java Developer | Python Developer | Web Developer
-
-</footer>
-
-
-<script>
-
-function toggleMenu(){
-    document.getElementById('nav').classList.toggle('active')
-}
-
-document.querySelectorAll('#nav a').forEach(a =>
-    a.onclick = () =>
-        document.getElementById('nav').classList.remove('active')
-)
-
-</script>
-
-</body>
-</html>
+<div class="tec
